@@ -72,8 +72,8 @@ class TicTacToe
 
 
   def current_player
-    player_1 = "1"
-    player_2 = "2"
+    player_x = "x"
+    player_o = "2"
     if @board.count("1")==@board.count("2")
       return player_1
     else
