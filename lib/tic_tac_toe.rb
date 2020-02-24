@@ -1,6 +1,6 @@
 class TicTacToe
   
-  win_requirements=[
+  WIN_COMBINATIONS=[
     [6,4,2],
     [0,3,6],
     [2,5,8],
