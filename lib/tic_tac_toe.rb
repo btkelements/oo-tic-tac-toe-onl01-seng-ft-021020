@@ -83,7 +83,7 @@ class TicTacToe
 
  
   def won?
-    win_requirements.each do |win|
+    WIN_COMBINATIONS.each do |win|
       if @board[win[0]] == "1" && @board[win[1]] == "1" && @board[win[2]] =="1"
         return win
 
