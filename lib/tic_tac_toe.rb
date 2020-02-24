@@ -1,40 +1,38 @@
 class TicTacToe
   
   WIN_COMBINATIONS=[
-    [6,4,2],
-    [0,3,6],
-    [2,5,8],
-    [1,4,7],
-    [0,4,8],
-    [6,7,8],
     [0,1,2],
     [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [6,4,2]
     ]
 
- 
+
   def initialize
   @board = Array.new(9, " ")
   end
 
- 
+
   def display_board
     count = 0
-    @board.each do |n|
+    @board.each do |i|
       count+=1
       if count%3==0
-        print " #{n} \n-----------\n"
+        print " #{i} \n-----------\n"
       else
-        print " #{n} |"
+        print " #{i} |"
       end
     end
   end
-
 
   def input_to_index (input)
     input.to_i - 1
   end
 
- 
   def move(index, token="X")
     @board[index] = token
   end
@@ -43,7 +41,6 @@ class TicTacToe
     !@board[position].include?(" ")
   end
 
- 
   def valid_move?(position)
     return false if (position < 0 || position > 8)
     !position_taken?(position)
@@ -62,8 +59,8 @@ class TicTacToe
 
   def turn_count
     count=0
-    @board.each do |n|
-      if n == "X" || n == "O"
+    @board.each do |i|
+      if i == "X" || i== "O"
         count +=1
       end
     end
@@ -74,14 +71,13 @@ class TicTacToe
   def current_player
     player_x = "X"
     player_o = "O"
-    if @board.count("1")==@board.count("2")
-      return player_1
+    if @board.count("X")==@board.count("O")
+      return player_x
     else
-      return player_2
+      return player_o
     end
   end
 
- 
   def won?
     WIN_COMBINATIONS.each do |win|
       if @board[win[0]] == "X" && @board[win[1]] == "X" && @board[win[2]] =="X"
@@ -94,11 +90,9 @@ class TicTacToe
     return false
   end
 
-
   def full?
     !@board.include?(" ")
   end
-
 
   def draw?
     if full? && !won?
@@ -117,7 +111,6 @@ class TicTacToe
     end
   end
 
-
   def winner
     if won?
       champion = won?
@@ -126,7 +119,6 @@ class TicTacToe
       return NIL
   end
 end
-
 
 def play
   until over? == true
@@ -144,3 +136,5 @@ end
 
 
 end
+
+
