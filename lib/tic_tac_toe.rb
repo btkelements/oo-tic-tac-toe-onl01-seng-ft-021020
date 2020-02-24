@@ -1,6 +1,6 @@
 class TicTacToe
   
-  WIN_COMBINATIONS=[
+  win_requirements=[
     [6,4,2],
     [0,3,6],
     [2,5,8],
@@ -84,7 +84,7 @@ class TicTacToe
 
  
   def won?
-    WIN_COMBINATIONS.each do |win|
+    win_requirements.each do |win|
       if @board[win[0]] == "1" && @board[win[1]] == "1" && @board[win[2]] =="1"
         return win
 
